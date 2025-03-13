@@ -46,9 +46,12 @@ const Payment = () => {
   const handlePayment = async () => {
     if (amount && !isNaN(amount) && Number(amount) > 0) {
       // Order ID and session ID both are comming form backend
+      // const payment_session_id =
+      //   'session_Gpx8dbqf3FCTyVDtRGfuXM4e1i6eTQCKSbIcD7VVlhNbnLsa0iCheBom3Hba3BIHTuIc5WCKYb9eXs3hKjz-imdh5W4aeX5kUCPmQ3JRNv__gpcgI4eDy3yFTgpaymentpayment';
+      // const order_id = 'bb411895a28e';
       const payment_session_id =
-        'session_Gpx8dbqf3FCTyVDtRGfuXM4e1i6eTQCKSbIcD7VVlhNbnLsa0iCheBom3Hba3BIHTuIc5WCKYb9eXs3hKjz-imdh5W4aeX5kUCPmQ3JRNv__gpcgI4eDy3yFTgpaymentpayment';
-      const order_id = 'bb411895a28e';
+        'session_weRScfaHFFaZfI4VWc3BnSDXO5AMlw3d87s-92JnJCyAMRFSHHB8YeAbcITFFo73UdX_0DFbAolwjuKVgivqKxg6mzIx2yBMbmH4t6l7u4wRpB-HP2IBjjGNUApaymentpayment';
+      const order_id = '2efa24edd29e';
       const details = {payment_session_id, order_id, amount};
       setOrderDetails(details);
 
@@ -75,6 +78,7 @@ const Payment = () => {
         // Create the payment object
         const dropPayment = new CFDropCheckoutPayment(session, null, theme);
         console.log('Drop payment initialized:', JSON.stringify(dropPayment));
+        // CFPaymentGatewayService.doUPIPayment( dropPayment,handlePaymentResponse); // Open UPI payment direct only
 
         // Trigger the payment gateway
         CFPaymentGatewayService.doPayment(dropPayment, handlePaymentResponse);
