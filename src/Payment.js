@@ -10,6 +10,8 @@ import {
   CFEnvironment,
   CFSession,
   CFThemeBuilder,
+  CFPaymentModes,
+  CFPaymentComponentBuilder
 } from 'cashfree-pg-api-contract';
 
 const Payment = () => {
@@ -63,6 +65,15 @@ const Payment = () => {
           CFEnvironment.SANDBOX,
         );
 
+        // Whatever payment modes you want to enable
+        // const paymentModes = new CFPaymentComponentBuilder()
+        // .add(CFPaymentModes.CARD)
+        // .add(CFPaymentModes.UPI)
+        // .add(CFPaymentModes.NB)
+        // .add(CFPaymentModes.WALLET)
+        // .add(CFPaymentModes.PAY_LATER)
+        // .build();
+
         console.log('Session:', session);
 
         // Set up theme for the checkout UI
@@ -74,8 +85,8 @@ const Payment = () => {
           .setPrimaryTextColor('#212121')
           .setSecondaryTextColor('#757575')
           .build();
-
-        // Create the payment object
+     
+        // const dropPayment = new CFDropCheckoutPayment(session, paymentModes, theme);
         const dropPayment = new CFDropCheckoutPayment(session, null, theme);
         console.log('Drop payment initialized:', JSON.stringify(dropPayment));
         // CFPaymentGatewayService.doUPIPayment( dropPayment,handlePaymentResponse); // Open UPI payment direct only

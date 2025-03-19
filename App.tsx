@@ -18,14 +18,14 @@ import {
 
 import PaymentScreen from './src/Payment';
 import CustomButtonPayment from './src/CustomButtonPayment';
+import Truemads from './src/Truemads';
 
 function App(): React.JSX.Element {
   return (
-    // <View style={styles.sectionContainer}>
-    //   <PaymentScreen />
-    // </View>
     <View style={styles.sectionContainer}>
-      <CustomButtonPayment />
+      <Truemads />
+      {/* <CustomButtonPayment /> */}
+      {/* <PaymentScreen /> */}
     </View>
   );
 }
