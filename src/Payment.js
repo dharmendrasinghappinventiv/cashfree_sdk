@@ -14,6 +14,10 @@ import {
   CFPaymentComponentBuilder
 } from 'cashfree-pg-api-contract';
 
+// Cashfree SDK link: https://www.cashfree.com/docs/payments/online/mobile/react-native#upi-intent-checkout
+// github link: https://github.com/cashfree/react-native-cashfree-pg-sdk/blob/abedee6133ec53fb306a0e72cde6cc0be7468565/example/App.tsx
+// cashfree doc link: https://docs.google.com/document/d/1G4R3xR-_rQJsT9o5acDajOWrRi7QZguj53SMLWBTV_M/edit?addon_store&tab=t.0
+
 const Payment = () => {
   const [amount, setAmount] = useState('');
   const [orderDetails, setOrderDetails] = useState(null);

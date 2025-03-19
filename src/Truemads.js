@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   header: {
-    fontSize: 24,
+    fontSize: 22,
     textAlign: 'center',
     marginBottom: 20,
   },
